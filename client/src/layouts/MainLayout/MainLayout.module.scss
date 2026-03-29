@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-main);
+}
+
+.content {
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.loading {
+  font-size: 15px;
+  color: var(--text-secondary);
+}

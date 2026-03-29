@@ -1,0 +1,31 @@
+.list {
+  list-style: none;
+  padding: 0 12px;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.item {
+  padding: 12px 14px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--bg-main);
+  }
+}
+
+.itemActive {
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-weight: 500;
+
+  &:hover {
+    background: var(--primary-bg-hover);
+  }
+}
