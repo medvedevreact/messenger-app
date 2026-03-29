@@ -4,6 +4,7 @@ networks:
 services:
   nginx:
     image: nginx:stable-alpine
+    restart: always
     ports:
       - "80:80"
       - "443:443"
@@ -19,11 +20,28 @@ services:
   backend:
     build:
       context: ./server
+    restart: always
+    env_file:
+      - ./server/.env
+    depends_on:
+      - mongo
     networks:
       - dev
 
   frontend:
     build:
       context: ./client
+    restart: always
     networks:
       - dev
+
+  mongo:
+    image: mongo:6
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - dev
+
+volumes:
+  mongo_data:
